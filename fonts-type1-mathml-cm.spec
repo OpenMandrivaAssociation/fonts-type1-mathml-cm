@@ -32,7 +32,7 @@ This package contains a subset of PostScript fonts of the Knuth's Computer
 Modern family, to be used with Xprint.
 
 %prep
-%setup -n cmpsfont
+%setup -q -n cmpsfont
 
 %build
 
@@ -64,6 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr (-,root,root)
 %dir %{fontdir}
 %doc README
-%(attr,644,root,root) %{fontdir}/*.pfb
-%(attr,644,root,root) %{fontdir}/*.afm
-%(attr,644,root,root) %{fontdir}/fonts.dir
+%attr(644,root,root) %{fontdir}/*.pfb
+%attr(644,root,root) %{fontdir}/*.afm
+%attr(644,root,root) %{fontdir}/fonts.dir
