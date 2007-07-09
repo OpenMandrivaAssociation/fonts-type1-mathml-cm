@@ -1,6 +1,6 @@
 %define name fonts-type1-mathml-cm
 %define version 1.0
-%define release 4mdk
+%define release %mkrel 5
 %define fontdir /usr/X11R6/lib/X11/xserver/C/print/fonts/MathML/Type1/cm
 
 Name:          %{name}
@@ -19,14 +19,13 @@ Requires:      xorg-x11-xfs
 Requires:      xprint
 Requires:      XFree86-xfs
 %endif
-Requires:      chkfontpath >= 1.4.1, font-tools >= 0.1-5mdk
+Requires:      font-tools >= 0.1-5mdk
 Requires:      fontconfig
 BuildRequires: font-tools >= 0.1-5mdk
 BuildRequires: fontconfig
 Obsoletes:     fonts-mathml-cm-type1
 Provides:      fonts-mathml-cm-type1
 BuildArch:     noarch
-PreReq:        /usr/sbin/chkfontpath
 
 %description
 This package contains a subset of PostScript fonts of the Knuth's Computer
