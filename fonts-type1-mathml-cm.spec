@@ -1,7 +1,7 @@
 %define name fonts-type1-mathml-cm
 %define version 1.0
-%define release %mkrel 5
-%define fontdir /usr/X11R6/lib/X11/xserver/C/print/fonts/MathML/Type1/cm
+%define release %mkrel 6
+%define fontdir %{_datadir}/fonts/type1/mathml-cm
 
 Name:          %{name}
 Version:       %{version}
@@ -12,17 +12,7 @@ Group:         System/Fonts/Type1
 Source0:       ftp://ftp.dante.de/pub/tex/fonts/cm/ps-type1/bluesky/cmps-unix.tar.bz2
 URL:           http://www.ams.org/tex/type1-fonts.html
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}
-%if %mdkversion > 1020
-Requires:      xorg-x11-Xprt
-Requires:      xorg-x11-xfs
-%else
-Requires:      xprint
-Requires:      XFree86-xfs
-%endif
 Requires:      font-tools >= 0.1-5mdk
-Requires:      fontconfig
-BuildRequires: font-tools >= 0.1-5mdk
-BuildRequires: fontconfig
 Obsoletes:     fonts-mathml-cm-type1
 Provides:      fonts-mathml-cm-type1
 BuildArch:     noarch
@@ -57,6 +47,10 @@ cmr10.pfb -bsr-cmr10-medium-r-normal--0-0-0-0-p-0-adobe-fontspecific
 cmsy10.pfb -bsr-cmsy10-medium-r-normal--0-0-0-0-p-0-adobe-fontspecific
 EOF
 
+mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
+ln -s ../../..%{fontdir} \
+    %{buildroot}%_sysconfdir/X11/fontpath.d/type1-mathml-cm:pri=50
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -67,3 +61,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) %{fontdir}/*.pfb
 %attr(644,root,root) %{fontdir}/*.afm
 %attr(644,root,root) %{fontdir}/fonts.dir
+%{_sysconfdir}/X11/fontpath.d/type1-mathml-cm:pri=50
