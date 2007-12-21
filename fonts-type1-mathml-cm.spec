@@ -11,6 +11,7 @@ Summary:       PostScript Type1 MathML fonts (Computer Modern)
 Group:         System/Fonts/Type1
 Source0:       ftp://ftp.dante.de/pub/tex/fonts/cm/ps-type1/bluesky/cmps-unix.tar.bz2
 URL:           http://www.ams.org/tex/type1-fonts.html
+BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}
 Requires:      font-tools >= 0.1-5mdk
 Obsoletes:     fonts-mathml-cm-type1
 Provides:      fonts-mathml-cm-type1
