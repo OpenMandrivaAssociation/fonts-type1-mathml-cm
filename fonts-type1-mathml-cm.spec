@@ -1,6 +1,6 @@
 %define name fonts-type1-mathml-cm
 %define version 1.0
-%define release %mkrel 8
+%define release %mkrel 9
 %define fontdir %{_datadir}/fonts/type1/mathml-cm
 
 Name:          %{name}
