@@ -16,6 +16,7 @@ Requires:      font-tools >= 0.1-5mdk
 Obsoletes:     fonts-mathml-cm-type1
 Provides:      fonts-mathml-cm-type1
 BuildArch:     noarch
+BuildRequires: fontconfig
 
 %description
 This package contains a subset of PostScript fonts of the Knuth's Computer
