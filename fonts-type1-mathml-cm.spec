@@ -63,3 +63,65 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) %{fontdir}/*.afm
 %attr(644,root,root) %{fontdir}/fonts.dir
 %{_sysconfdir}/X11/fontpath.d/type1-mathml-cm:pri=50
+
+
+%changelog
+* Tue May 17 2011 Funda Wang <fwang@mandriva.org> 1.0-11mdv2011.0
++ Revision: 675582
+- br fontconfig for fc-query used in new rpm-setup-build
+
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0-10mdv2011.0
++ Revision: 618313
+- the mass rebuild of 2010.0 packages
+
+* Thu Sep 03 2009 Thierry Vignaud <tv@mandriva.org> 1.0-9mdv2010.0
++ Revision: 428855
+- rebuild
+
+* Tue Jul 22 2008 Thierry Vignaud <tv@mandriva.org> 1.0-8mdv2009.0
++ Revision: 240719
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Mon Jul 16 2007 Ademar de Souza Reis Jr <ademar@mandriva.com.br> 1.0-6mdv2008.0
++ Revision: 52667
+- {build,}requires cleanup
+- use standard fontsdir location instead of the xprint tree
+  (xprint is not even supported anymore)
+- fontpath.d conversion (#31756)
+
+* Mon Jul 09 2007 Ademar de Souza Reis Jr <ademar@mandriva.com.br> 1.0-5mdv2008.0
++ Revision: 50635
+- remove chkfontpath requirement (it was not used anywhere)
+  (BTW, this package is obsolete, since we don't support
+  Xprint anymore)
+- Import fonts-type1-mathml-cm
+
+
+
+* Wed Aug 30 2005 Giuseppe Ghibò <ghibo@mandriva.com> 1.0-4mdk
+- Rebuilt.
+
+* Mon Sep 08 2003 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.0-3mdk
+- Changed fontpath from /usr/X11R6/lib/X11/fonts/MathML/Type1/cm to
+  /usr/X11R6/lib/X11/xserver/C/print/fonts/MathML/Type1/cm, and don't
+  add the fonts to the system fontpath, so that Type1 fonts are used only
+  by xprint (as the same version of the fonts, but in TrueType are provided
+  also in package fonts-ttf-latex).
+
+* Mon Aug 25 2003 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.0-2mdk
+- cosmetic changes to %%post scripts.
+- Removed XftCache (Xft1) support.
+
+* Fri Feb 21 2003 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.0-1mdk
+- Build fontconfig compliant.
+- Package renamed to fonts-type1-...
+
+* Sun Sep 08 2002 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.0-2mdk
+- added missed .afm files.
+
+* Mon Jul 29 2002 Giuseppe Ghibò <ghibo@mandrakesoft.com> 1.0-1mdk
+- initial release.
